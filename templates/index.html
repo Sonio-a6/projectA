@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">RidePulse</a>
+
+        <nav class="navbar">
+            <a href="{{ url_for('home') }}" style="--i:1;">Home</a>
+            <a href="{{ url_for('about') }}" style="--i:2;">About Us</a>
+            <a href="{{ url_for('contact') }}" style="--i:5;">Contact Us</a>
+            <a href="{{ url_for('explore') }}" style="--i:3;"></a>
+        </nav>
+
+        <div class="social-media">
+            <a href="#"style="--i:1;"><i class='bx bxl-facebook-circle' ></i></a>
+            <a href="#"style="--i:2;"><i class='bx bxl-twitter'></i></a>
+            <a href="#"style="--i:3;"><i class="bx bxs-user-circle"></i></a>
+        </div>
+    </header>
+    <section class="home">
+        <div class="home-content">
+            <h1>Fuel Your Passion</h1>
+            <h3>"Ambition is the path to success. Persistence is the vehicle you arrive in" </h3>
+            <a href="{{ url_for('explore') }}" class="btn">Explore Cars</a>
+
+        </div>
+
+        <div class="home-img">
+            <div class="rhombus">
+                <img src="{{ url_for('static', filename='images/car_image-removebg-preview.png') }}" alt="Car Image">
+
+            </div>
+        </div>
+
+        <div class="rhombus2"></div>
+    </section>
+
+</body>
+</html>

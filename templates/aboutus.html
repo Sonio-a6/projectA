@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Car Recommender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet2.css') }}">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">RidePulse</a>
+
+        <nav class="navbar">
+            <a href="{{ url_for('home') }}" style="--i:1;">Home</a>
+            <a href="{{ url_for('about') }}" style="--i:2;">About Us</a>
+            <a href="{{ url_for('contact') }}" style="--i:3;">Contact Us</a>
+            <a href="{{ url_for('explore') }}" style="--i:4;"></a>
+        </nav>
+
+        <div class="social-media">
+            <a href="#" style="--i:1;"><i class='bx bxl-facebook-circle'></i></a>
+            <a href="#" style="--i:2;"><i class='bx bxl-twitter'></i></a>
+            <a href="#" style="--i:3;"><i class="bx bxs-user-circle"></i></a>
+        </div>
+    </header>
+
+    <section class="about-section">
+        <div class="container">
+            <h1>About Us</h1>
+            <p>
+                Welcome to our Car Recommendation System – where innovation meets user satisfaction. Our mission is to simplify your car search journey by using real user feedback and sentiment analysis to recommend the best vehicles suited to your needs.
+            </p>
+            <p>
+                With a powerful blend of Natural Language Processing and intelligent algorithms, our system analyzes public reviews and car features to provide personalized recommendations. Whether you're looking for performance, comfort, affordability, or style – we help you make the smartest choice based on what truly matters: real user experiences.
+            </p>
+            <p>
+                Explore a curated list of top-rated cars, view their strengths, check real-time ratings, and make informed decisions – all in one platform. Built for car enthusiasts and first-time buyers alike, our platform ensures a smart, data-driven car selection process.
+            </p>
+            <p>
+                Let's drive the future, one smart decision at a time.
+            </p>
+        </div>
+    </section>
+</body>
+</html>

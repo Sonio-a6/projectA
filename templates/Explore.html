@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styl2.css') }}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">RidePulse</a>
+
+        <nav class="navbar">
+            <a href="{{ url_for('home') }}" style="--i:1;">Home</a>
+            <a href="{{ url_for('about') }}" style="--i:2;">About Us</a>
+            <a href="{{ url_for('contact') }}" style="--i:5;">Contact Us</a>
+            <a href="{{ url_for('explore') }}" style="--i:3;"></a>
+        </nav>
+
+        <div class="social-media">
+            <a href="#" style="--i:1;"><i class='bx bxl-facebook-circle'></i></a>
+            <a href="#" style="--i:2;"><i class='bx bxl-twitter'></i></a>
+            <a href="#" style="--i:3;"><i class="bx bxs-user-circle"></i></a>
+        </div>
+    </header>
+
+    <section class="home">
+        <div class="rhombus2"></div>
+    </section>
+
+    <div class="explore-container">
+        <h1>Find the Best Car for You</h1>
+        
+        <form action="/predict" method="POST">
+            <label for="strengths">Enter your wish:</label>
+            <input type="text" id="strengths" name="strengths" placeholder="Type your preferences..." required>
+            <button type="submit">Find Car</button>
+        </form>
+        
+        {% if cars %}
+        <h2 class="title">Top Matched Cars</h2>
+        <div class="table-container">
+            <table class="car-table">
+                <thead>
+                    <tr>
+                        <th>Car Name</th>
+                        <th>Price (₹)</th>
+                        <th>Rating</th>
+                        <th>Strengths</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for car in cars %}
+                    <tr>
+                        <td>{{ car['Model'] }}</td>
+
+                        <td>
+                            {% if car['price'] %}
+                                {{ "{:,}".format(car['price']|float|int) }}
+                            {% else %}
+                                N/A
+                            {% endif %}
+                        </td>
+                        <td>{{ car['rating'] }}</td>
+                        <td>
+                            {% if car['strengths'] is string %}
+                                {{ car['strengths'].strip("[]").replace("'", "").replace(",", ", ") }}
+                            {% else %}
+                                {{ car['strengths'] }}
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% elif error %}
+            <p>{{ error }}</p>
+        {% endif %}
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | RidePulse</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style3.css') }}">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <header class="header">
+    <a href="#" class="logo">RidePulse</a>
+
+    <nav class="navbar">
+      <a href="{{ url_for('home') }}" style="--i:1;">Home</a>
+      <a href="{{ url_for('about') }}" style="--i:2;">About Us</a>
+      <a href="{{ url_for('contact') }}" style="--i:3;">Contact Us</a>
+      <a href="{{ url_for('explore') }}" style="--i:4;">Explore</a>
+    </nav>
+
+    <div class="social-media">
+      <a href="#" style="--i:1;"><i class='bx bxl-facebook-circle'></i></a>
+      <a href="#" style="--i:2;"><i class='bx bxl-twitter'></i></a>
+      <a href="#" style="--i:3;"><i class="bx bxs-user-circle"></i></a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="item">
+      <div class="contact">
+        <div class="first-text">Let's Get In Touch</div>
+        <div class="first-text2">
+          Have questions or need assistance? Our team is here to help you find the perfect car for your adventure.
+        </div>
+        <img src="{{ url_for('static', filename='images/car_body-removebg-preview.png') }}" alt="Car Image" class="image"/>
+
+        <div class="social-links">
+          <span class="secnd-text">Connect With Us</span>
+          <ul class="social-media2">
+            <li><a href="#"><i class='bx bxl-facebook-circle'></i></a></li>
+            <li><a href="#"><i class='bx bxl-twitter'></i></a></li>
+            <li><a href="#"><i class='bx bxl-instagram'></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="submit-form">
+        <h4 class="third-text">Contact Us</h4>
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="be5fd28e-fdf6-4f69-a329-fb313951b1fa">
+
+          <div class="input-box">
+            <input type="text" class="input" name="name" required />
+            <label>Name</label>
+          </div>
+
+          <div class="input-box">
+            <input type="email" class="input" name="email" required />
+            <label>Email</label>
+          </div>
+
+          <div class="input-box">
+            <input type="tel" class="input" name="phone" required />
+            <label>Phone No.</label>
+          </div>
+
+          <div class="input-box">
+            <textarea name="message" class="input" required rows="5"></textarea>
+            <label>Message</label>
+          </div>
+
+          <input type="submit" class="btn" value="Submit" />
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

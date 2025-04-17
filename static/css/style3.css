@@ -1,0 +1,138 @@
+/* Reset defaults */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f4f4;
+    padding-top: 120px; /* Push content below fixed header */
+  }
+  
+  /* Header */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 8%;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .logo {
+    font-size: 32px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #1743e3;
+  }
+  
+  .navbar a {
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: 0.3s;
+  }
+  
+  .navbar a:hover {
+    color: #1743e3;
+  }
+  
+  .social-media a {
+    margin-left: 10px;
+    color: #333;
+    font-size: 22px;
+  }
+  
+  /* Container */
+  .container {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+  }
+  
+  /* Card */
+  .item {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    overflow: hidden;
+  }
+  
+  /* Left side (Contact Info) */
+  .contact {
+    flex: 1 1 300px;
+    background: #1743e3;
+    padding: 40px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .first-text {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .first-text2 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #e0e0f0;
+  }
+  
+  .image {
+    width: 220px;
+    margin: 20px 0;
+  }
+  
+  .social-media2 {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .social-media2 i {
+    font-size: 22px;
+    background: #fff;
+    color: #1743e3;
+    padding: 10px;
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+  
+  .social-media2 i:hover {
+    background: #122c91;
+    color: #fff;
+  }
+  
+  .secnd-text {
+    font-size: 16px;
+    color: #cfcfff;
+    margin-bottom: 10px;
+  }
+  
+  /* Right side (Form) */
+  .submit-form {
+    flex: 1 1 400px;
+    padding: 40px;
+  }
+  
+  .third-text {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }  
