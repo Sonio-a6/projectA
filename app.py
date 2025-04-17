@@ -2,20 +2,20 @@ from flask import Flask, request, render_template
 import pandas as pd
 import re
 import random
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
 import os
 import gdown
-
-model_path = "model.pkl"
-if not os.path.exists(model_path):
-    print("Downloading model.pkl from Google Drive...")
-    url = "https://drive.google.com/uc?id=1A2B3C4D5EfGhIjKLmnOPqR1234567890"  # your file ID
-    gdown.download(url, model_path, quiet=False)
-
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
 app = Flask(__name__)
-# run_with_ngrok(app)
+
+MODEL_PATH = 'model.pkl'
+FILE_ID = '1AYblw86kMxhfSBG7QwJWbjuHDI4ahwlx'
+DOWNLOAD_URL = f'https://drive.google.com/uc?id={FILE_ID}'
+
+if not os.path.exists(MODEL_PATH):
+    print("Downloading model.pkl from Google Drive...")
+    gdown.download(DOWNLOAD_URL, MODEL_PATH, quiet=False)
 
 df = pd.read_csv("cars_ds_final_with_strengths.csv").drop_duplicates()
 
